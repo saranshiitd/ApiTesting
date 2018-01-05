@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Bitmap mBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.kitten_cuteness_1);
-        ImageView imageView = (ImageView)findViewById(R.id.image);
-        imageView.setImageResource(R.drawable.kitten_cuteness_1);
+        final ImageView imageView = (ImageView)findViewById(R.id.image);
         Button btnProcess = (Button)findViewById(R.id.btnProcess);
 //        TextView textView = (TextView)findViewById(R.id.txtDescription);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -88,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                             stringBuilder.append("\n\n");
                         }
                         txtDescription.setText(stringBuilder);
+                        imageView.setImageResource(R.drawable.kitten_cuteness_1);
+
                     }
                     @Override
                     protected void onProgressUpdate(String... values) {
